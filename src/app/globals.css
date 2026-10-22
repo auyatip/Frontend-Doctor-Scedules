@@ -3,7 +3,324 @@
 @tailwind utilities;
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: #1e293b;
+  background: #eef7ff;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+.dashboard-shell {
+  background: radial-gradient(circle at top right, #d9efff 0, transparent 34%),
+    linear-gradient(135deg, #f7fbff 0%, #eaf4ff 100%);
+}
+
+.responsive-card.ant-card {
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 24px 70px rgba(37, 61, 86, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.schedule-card {
+  border: 1px solid #e4edf2;
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(35, 67, 87, 0.09);
+}
+
+.dashboard-content {
+  position: relative;
+}
+
+.section-eyebrow {
+  margin: 0 0 4px;
+  color: #5d8fc5;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.section-title {
+  margin: 0;
+  color: #193b66;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #cde5fa;
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: #2573b8;
+  background: #f2f8ff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.live-badge span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #35b87c;
+  box-shadow: 0 0 0 3px #d9f5e8;
+}
+
+.add-button,
+.save-button {
+  background: #2f80ed;
+  transition: all 160ms ease;
+}
+
+.add-button {
+  border: 0;
+  border-radius: 10px;
+  padding: 8px 12px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.add-button:hover,
+.save-button:hover {
+  background: #1e5aa8;
+  transform: translateY(-1px);
+}
+
+.demo-modal {
+  background: rgba(15, 45, 77, 0.42);
+  backdrop-filter: blur(4px);
+}
+
+.demo-form {
+  border-radius: 24px 0 0 24px;
+  animation: slide-in 180ms ease-out;
+}
+
+@keyframes slide-in {
+  from { transform: translateX(24px); opacity: 0.7; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 12px;
+  color: #46627d;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  border: 1px solid #d6e5f2;
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: #1e293b;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: #5caaf2;
+  box-shadow: 0 0 0 3px #e4f2ff;
+}
+
+.workflow-box {
+  border-top: 1px solid #e5eef6;
+  padding-top: 14px;
+}
+
+.status-pill {
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.status-waiting { color: #236da9; background: #e5f2ff; }
+.status-examining { color: #157a85; background: #dff8fa; }
+.status-payment { color: #946318; background: #fff2cf; }
+.status-completed { color: #287b55; background: #dcf8e8; }
+
+.workflow-button {
+  border: 1px solid #cfe3f5;
+  border-radius: 9px;
+  padding: 8px 4px;
+  color: #2f6fa7;
+  background: #f5faff;
+  font-size: 11px;
+  font-weight: 700;
+  transition: 160ms ease;
+}
+
+.workflow-button:hover {
+  border-color: #2f80ed;
+  color: #fff;
+  background: #2f80ed;
+}
+
+.summary-panel {
+  border-radius: 18px;
+}
+
+.summary-panel .status-card > div:last-child {
+  min-height: 270px;
+}
+
+.summary-panel .status-card {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.summary-panel .status-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 28px rgba(35, 100, 160, 0.14);
+}
+
+.doctor-banner {
+  background: linear-gradient(135deg, #174b91, #2f80ed);
+  box-shadow: 0 10px 20px rgba(30, 90, 168, 0.2);
+}
+
+.hours-banner {
+  background: linear-gradient(135deg, #4da3f5, #8cc8ff);
+}
+
+.revenue-chip {
+  border: 1px solid #d4e7ef;
+  border-radius: 14px;
+  background: #eaf5fa;
+  color: #2f80ed;
+}
+
+.refresh-button {
+  border-color: #5caaf2;
+  color: #2f80ed;
+  background: #f2f8ff;
+  transition: all 160ms ease;
+}
+
+.refresh-button:hover {
+  background: #2f80ed;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.status-card {
+  overflow: hidden;
+  border: 1px solid #dce9ee;
+  border-radius: 14px;
+  box-shadow: 0 10px 22px rgba(35, 67, 87, 0.08);
+}
+
+.status-title {
+  background: linear-gradient(135deg, #2f80ed, #65b5f5);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* Keep the schedule readable on narrow screens while allowing the page to scroll
+   horizontally instead of forcing the entire layout wider than the viewport. */
+.schedule-table .ant-table {
+  min-width: 420px;
+}
+
+.schedule-table {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #8fc5ef #edf6fd;
+}
+
+.schedule-table::-webkit-scrollbar {
+  height: 7px;
+}
+
+.schedule-table::-webkit-scrollbar-track {
+  border-radius: 999px;
+  background: #edf6fd;
+}
+
+.schedule-table::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: #8fc5ef;
+}
+
+.schedule-table .ant-table-cell {
+  white-space: normal;
+}
+
+@media (max-width: 640px) {
+  .dashboard-shell {
+    padding: 8px;
+  }
+
+  .responsive-card.ant-card {
+    border-radius: 18px;
+  }
+
+  .dashboard-content {
+    gap: 18px;
+    padding: 10px;
+  }
+
+  .schedule-card {
+    padding: 8px !important;
+    border-radius: 16px;
+  }
+
+  .doctor-banner h1 {
+    max-width: calc(100% - 48px);
+    font-size: 15px;
+    line-height: 1.35;
+  }
+
+  .hours-banner {
+    font-size: 12px;
+  }
+
+  .add-button {
+    padding: 7px 9px;
+    font-size: 11px;
+  }
+
+  .schedule-table {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .schedule-table .ant-table {
+    min-width: 430px;
+  }
+
+  .demo-form {
+    max-width: 100%;
+    border-radius: 20px 20px 0 0;
+    margin-top: auto;
+    height: auto;
+    max-height: 92vh;
+  }
+
+  .section-title {
+    font-size: 19px;
+  }
+
+  .summary-panel .status-card > div:last-child {
+    min-height: 160px;
+  }
+
+  .schedule-table .ant-table-cell {
+    padding: 8px 6px !important;
+    font-size: 12px;
+  }
+
+  .schedule-table .ant-table-cell:nth-child(2) {
+    min-width: 280px;
+  }
 }
